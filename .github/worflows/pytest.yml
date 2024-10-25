@@ -1,1 +1,14 @@
-
+name: pytest
+on: workflow_dispatch
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repository
+        run: |
+          git clone https://github.com/hulingF/github-actions-2.git
+          cd github-actions-2
+      - name: install pytest
+        run: pip install pytest
+      - name: run pytest
+        run: pytest
